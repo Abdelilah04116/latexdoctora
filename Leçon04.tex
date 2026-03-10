@@ -1,0 +1,335 @@
+\documentclass[a4paper,landscape]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{anyfontsize}
+
+\geometry{landscape,left=0.4cm,right=0.4cm,top=0.6cm,bottom=0.4cm}
+
+% Réduction globale de la taille des polices
+\renewcommand{\normalsize}{\fontsize{7}{8}\selectfont}
+\renewcommand{\small}{\fontsize{6}{7}\selectfont}
+\renewcommand{\footnotesize}{\fontsize{5}{6}\selectfont}
+
+% Définition des couleurs
+\definecolor{jaune}{RGB}{255,204,0}
+\definecolor{rouge}{RGB}{204,0,0}
+\definecolor{vert}{RGB}{153,204,0}
+\definecolor{bleu}{RGB}{0,102,204}
+
+% Filigrane "Prof Mehdi" en arrière-plan
+\AddToShipoutPictureBG{%
+  \AtPageCenter{%
+    \makebox(0,0){%
+      \rotatebox{45}{%
+        \textcolor{black!5}{\fontsize{80}{96}\selectfont\textit{Prof Mehdi}}%
+      }%
+    }%
+  }%
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5mm}
+\setlength{\columnsep}{6mm}
+\setlength{\multicolsep}{0pt}
+\setlength{\abovedisplayskip}{2pt}
+\setlength{\belowdisplayskip}{2pt}
+\setlength{\itemsep}{0pt}
+\setlength{\topsep}{0pt}
+
+\begin{document}
+
+\begin{multicols}{3}
+\setlength{\columnseprule}{0.5pt}
+\raggedcolumns
+
+% ====== COLONNE 1 ======
+{\noindent\colorbox{jaune}{\textbf{Leçon 04}} \colorbox{rouge}{\textcolor{white}{\textbf{Les fonctions logarithmiques}}} \colorbox{jaune}{\textbf{2\textsuperscript{ème}-Bac-Fc}}}
+
+\vspace{1mm}
+\noindent\textbf{Prof Mehdi Maths} $\|$ \textbf{Tél : 06.74.00.82.55} $\|$ \textbf{Centre Weber Settat}
+
+\vspace{1mm}
+\noindent\textcolor{blue}{\textbf{Définition}} : ( \textbf{Fonction logarithme} )
+
+\noindent\textit{La fonction logarithme népérien, notée $\ln x$, est la primitive de la fonction} $x \mapsto \dfrac{1}{x}$ \textit{sur l'intervalle} $]0;+\infty[$ \textit{qui s'annule en} 1.
+
+\vspace{0.5mm}
+\noindent\textcolor{blue}{\textbf{Conséquences}} : ( \textit{Autrement – dit} )
+
+\begin{itemize}\setlength{\itemsep}{0pt}
+\item \textcolor{red}{L'ensemble de définition de $\ln x$ est : $D = \mathbb{R}^*_+ = ]0;+\infty[$}
+\item \textcolor{red}{$\ln 1 = 0$ et $\ln e = 1$ où $e \approx 2,7182$ ($e$ est un nombre népérien).}
+\item \textcolor{red}{La fonction dérivée de $\ln x$ sur $]0;+\infty[$ c'est $(\ln x)' = \dfrac{1}{x}$}
+\end{itemize}
+
+\vspace{0.5mm}
+\noindent\textcolor{blue}{\textbf{Propriétés algébriques}} :
+
+\noindent\textit{Pour tout} $a$ et $b$ de $]0;+\infty[$ \textit{et tout} $k$ de $\mathbb{Q}$, \textit{on a} :
+
+\begin{itemize}\setlength{\itemsep}{0pt}
+\item $\ln(a \cdot b) = \ln(a) + \ln(b)$ \hspace{8mm} $\bullet$ $\ln(a^k) = k \cdot \ln(a)$
+\item $\ln\left(\dfrac{a}{b}\right) = \ln(a) - \ln(b) = -\ln\left(\dfrac{b}{a}\right)$ \hspace{3mm} $\bullet$ $\ln\left(\dfrac{1}{a}\right) = -\ln(a)$
+\item $\ln\left(\sqrt{a}\right) = \dfrac{1}{2}\ln(a)$ \hspace{12mm} $\bullet$ $\ln\left(\sqrt[n]{a}\right) = \dfrac{1}{n}\ln(a)$
+\end{itemize}
+
+\vspace{0.5mm}
+\noindent\colorbox{jaune}{\textbf{Application 01}} : \textit{Écrire en fonction de} $a$ et $b$ \textit{les nombres suivants :}
+
+\noindent $\bullet$ \textit{On pose :} $a = \ln 5$ et $b = \ln 5$
+
+\noindent $A = \ln(15)$ \quad $B = \ln(75)$ \quad $C = \ln\left(\sqrt{15}\right)$ \quad $D = \ln\left(3\sqrt{5}\right)$
+
+\noindent $E = \ln\left(\dfrac{5}{9}\right)$ \quad $F = \ln\left(\dfrac{15}{\sqrt{9}}\right)$ \quad $G = \ln\left(\sqrt{\dfrac{15}{\sqrt{3}}}\right)$ \quad $H = \ln\left(\sqrt[5]{3\sqrt{5}}\right)$
+
+\vspace{0.5mm}
+\noindent\textcolor{blue}{\textbf{Propriétés}} :
+
+\noindent\textit{Pour tout} $a$ et $b$ de $]0;+\infty[$, \textit{on a} :
+
+\noindent $a < b \Leftrightarrow \ln(a) < \ln(b)$ $//$ $a = b \Leftrightarrow \ln(a) = \ln(b)$
+
+\vspace{0.5mm}
+\noindent\colorbox{jaune}{\textbf{Application 02}} : \textit{Résoudre dans} $\mathbb{R}$ \textit{les équations suivantes :}
+
+\begin{itemize}\setlength{\itemsep}{0pt}
+\item $\ln x = 0$ \quad $\bullet$ $\ln(x) + \ln(x+1) = \ln 2$ \quad $\bullet$ $\ln(x) - \ln(2-x) = 0$
+\item $\ln x = 1$ \quad $\bullet$ $\ln(x) + \ln(x+2) = \ln 3$ \quad $\bullet$ $\ln(1-x) - \ln(x) = 0$
+\item $\ln x = 2$ \quad $\bullet$ $\ln^2(x) - 3\ln(x) + 2 = 0$ \quad $\bullet$ $\ln(x) - \ln(3-x) = 0$
+\end{itemize}
+
+\vspace{0.5mm}
+\noindent\textcolor{blue}{\textbf{Limites usuelles}} :
+
+\begin{itemize}\setlength{\itemsep}{0pt}
+\item $\displaystyle\lim_{x \to 0^+} \ln x = -\infty$ \hspace{18mm} $\bullet$ $\displaystyle\lim_{x \to +\infty} \ln x = +\infty$
+\item $\displaystyle\lim_{x \to 0^+} x \ln x = 0^-$ \hspace{18mm} $\bullet$ $\displaystyle\lim_{x \to +\infty} \dfrac{\ln x}{x} = 0^+$
+\item $\displaystyle\lim_{x \to 0^+} x^n \ln x = 0^-$ \quad $(n \in \mathbb{N}^*)$ \hspace{3mm} $\bullet$ $\displaystyle\lim_{x \to +\infty} \dfrac{\ln x}{x^n} = 0^+$ \quad $(n \in \mathbb{N}^*)$
+\item $\displaystyle\lim_{x \to 1^+} \dfrac{\ln x}{x-1} = 1$ \hspace{18mm} $\bullet$ $\displaystyle\lim_{x \to 0^+} \dfrac{\ln(x+1)}{x} = 1$
+\end{itemize}
+
+\columnbreak
+
+% ====== COLONNE 2 ======
+% ====== COLONNE 2 (version finale propre et complète) ======
+\columnbreak
+
+\noindent\colorbox{jaune}{\textbf{Application 03}} : \textit{Calculer les limites suivantes :}
+\vspace{2mm}
+
+\begin{minipage}{\columnwidth}
+\centering
+\small
+\begin{tabular}{@{}p{0.32\columnwidth}p{0.32\columnwidth}p{0.32\columnwidth}@{}}
+$\lim\limits_{x \to +\infty} x + 1 - \ln x$ &
+$\lim\limits_{x \to 0^+} x^2 + 1 - \ln x$ &
+$\lim\limits_{x \to +\infty} x^2 + x - \ln x$ \\[10pt]
+
+$\lim\limits_{x \to +\infty} 1 + \ln x$ &
+$\lim\limits_{x \to 0^+} \dfrac{1}{x^2} + \ln x$ &
+$\lim\limits_{x \to 0^+} \dfrac{\ln(x+1)}{x}$ \\[10pt]
+
+$\lim\limits_{x \to 3} \dfrac{x-3}{\ln(x-2)}$ &
+$\lim\limits_{x \to +\infty} \dfrac{\ln x - \ln 5}{x-5}$ &
+$\lim\limits_{x \to +\infty} \dfrac{(\ln x)^2}{x}$
+\end{tabular}
+\end{minipage}
+\vspace{5mm}
+
+\noindent\colorbox{jaune}{\textbf{Application 04}} : \textit{Calculer les limites suivantes :}
+\vspace{2mm}
+
+\begin{minipage}{\columnwidth}
+\centering
+\small
+\begin{tabular}{@{}p{0.32\columnwidth}p{0.32\columnwidth}p{0.32\columnwidth}@{}}
+$\lim\limits_{x \to 0^+} \dfrac{1}{\ln x} + x$ &
+$\lim\limits_{x \to e} \bigl(2x-1\bigr) - \dfrac{\ln x}{x-e}$ &
+$\lim\limits_{x \to +\infty} \dfrac{-\ln(1+x)}{-4x}$ \\[10pt]
+
+$\lim\limits_{x \to 4} (\ln x)^2 - \ln x$ &
+$\lim\limits_{x \to +\infty} x - 2\ln x$ &
+$\lim\limits_{x \to 1^+} \dfrac{\ln x}{x^2-1}$ \\[10pt]
+
+$\lim\limits_{x \to +\infty} \dfrac{x - \ln x}{x + \ln x}$ &
+$\lim\limits_{x \to 0^+} x(\ln x)^2$ &
+$\lim\limits_{x \to +\infty} \dfrac{(x+1)\ln x}{x^2}$
+\end{tabular}
+\end{minipage}
+\vspace{5mm}
+
+\noindent\textit{1. Domaine de définition d'une fonction :}
+\vspace{2mm}
+\begin{itemize}
+\item $f(x) = P(x)$ $\Leftrightarrow$ $Df = \mathbb{R}$
+\item $f(x) = \dfrac{Q(x)}{P(x)}$ $\Leftrightarrow$ $P(x) \neq 0$
+\item $f(x) = \sqrt{P(x)}$ $\Leftrightarrow$ $P(x) \geq 0$
+\item $f(x) = \ln(P(x))$ $\Leftrightarrow$ $P(x) > 0$
+\end{itemize}
+\vspace{3mm}
+
+\noindent\colorbox{jaune}{\textbf{Application 05}} : \textit{Déterminer le domaine de définition :}
+\vspace{2mm}
+
+\begin{minipage}{\columnwidth}
+\centering
+\small
+\begin{tabular}{@{}p{0.32\columnwidth}p{0.32\columnwidth}p{0.32\columnwidth}@{}}
+$f(x) = x - \ln x$ &
+$f(x) = \ln(x-2)$ &
+$f(x) = \ln(x^2-1)$ \\[8pt]
+$f(x) = \dfrac{1}{x^2} + \ln x$ &
+$f(x) = \dfrac{\ln x}{x-1}$ &
+$f(x) = \ln(x^3+2)$ \\[8pt]
+$f(x) = \ln\left(\dfrac{x-2}{x-1}\right)$ &
+$f(x) = \dfrac{\ln(x-1)}{x-2}$ &
+$f(x) = \sqrt{\ln(x-1)}$
+\end{tabular}
+\end{minipage}
+\vspace{5mm}
+
+\noindent\textit{2. Fonction dérivée d'une fonction logarithme :}
+\vspace{2mm}
+\begin{itemize}
+\item $f'(x) = (\ln x)' = \dfrac{1}{x}$ \hspace{15mm} $\bullet$ $f'(x) = (\ln u)' = \dfrac{u'}{u}$
+\end{itemize}
+\vspace{3mm}
+
+\noindent\colorbox{jaune}{\textbf{Application 06}} : \textit{Déterminer la fonction dérivée :}
+\vspace{2mm}
+
+\begin{minipage}{\columnwidth}
+\centering
+\small
+\begin{tabular}{@{}p{0.32\columnwidth}p{0.32\columnwidth}p{0.32\columnwidth}@{}}
+$f(x) = x + 1 - \ln x$ &
+$f(x) = x^3 + 1 - \ln x$ &
+$f(x) = \ln(x^2 - 2x)$ \\[8pt]
+$f(x) = \dfrac{1}{x} + \ln x$ &
+$f(x) = (x-1)\ln x$ &
+$f(x) = \dfrac{\ln x}{x-2}$ \\[8pt]
+$f(x) = \ln\left(\dfrac{x-2}{x-1}\right)$ &
+$f(x) = \dfrac{1}{3x^2} - \ln x$ &
+$f(x) = x - (\ln x)^2$
+\end{tabular}
+\end{minipage}
+\vspace{5mm}
+
+\noindent\colorbox{jaune}{\textbf{Application 07}} : \textit{Étudier les variations de la fonction :}
+\vspace{2mm}
+
+\begin{minipage}{\columnwidth}
+\centering
+\small
+\begin{tabular}{@{}p{0.32\columnwidth}p{0.32\columnwidth}p{0.32\columnwidth}@{}}
+$f(x) = x - 1 - \ln x$ &
+$f(x) = 1 + \ln x$ &
+$f(x) = 1 + x \ln x$
+\end{tabular}
+\end{minipage}
+\vspace{8mm}
+
+% ====== COLONNE 3 ======
+\noindent\colorbox{vert}{\textbf{Exercice 01}} : \textit{On considère la fonction :} $f(x) = x - 1 - \ln x$
+
+\vspace{1mm}
+
+\textit{1.a. Déterminer le domaine de définition} $Df$ \textit{de la fonction} $f$.
+
+\textit{1.b. Calcules les limites de la fonction} $f$ \textit{aux bornes de} $Df$.
+
+\textit{2. Étudier les branches infinies de la courbe} $(C)$.
+
+\textit{3.a. Calculer} $f'$ \textit{et dresser un tableau de variations de} $f$.
+
+\textit{3.b. Déduire le signe de la fonction} $f$ \textit{sur} $Df$.
+
+\textit{4. Étudier la position relative de} $(C)$ \textit{et la droite} $(A) : y = x$.
+
+\textit{5. Tracer la courbe} $(C)$ \textit{et la droite} $(A)$ \textit{dans un repère} $R(O,\vec{i},\vec{j})$.
+
+\vspace{2mm}
+\noindent\colorbox{vert}{\textbf{Exercice 02}} : \textit{On considère la fonction :} $f(x) = \dfrac{1}{x} + \ln x$
+
+\vspace{1mm}
+
+\textit{1.a. Déterminer le domaine de définition} $Df$ \textit{de la fonction} $f$.
+
+\textit{1.b. Calcules les limites de la fonction} $f$ \textit{aux bornes de} $Df$.
+
+\textit{2. Étudier les branches infinies de la courbe} $(C)$.
+
+\textit{3.a. Calculer} $f'$ \textit{et dresser un tableau de variations} $f$.
+
+\textit{3.b. Déduire le signe de la fonction} $f$ \textit{sur} $Df$.
+
+\textit{4. Étudier la position relative de} $(C)$ \textit{et la droite} $(A)$ \textit{pour tout} $x$ de $Df$.
+
+\textit{5. Tracer la courbe} $(C)$ \textit{dans un repère} $R(O,\vec{i},\vec{j})$ (\textbf{unité : 2 cm})
+
+\vspace{2mm}
+\noindent\colorbox{vert}{\textbf{Exercice 03}} : \textbf{I.} \textit{On considère la fonction :} $g(x) = 1 - x^2 - \ln x$
+
+\vspace{1mm}
+
+\textit{1.a. Déterminer le domaine de définition} $D_g$ \textit{de la fonction} $g$.
+
+\textit{1.b. Calcules les limites de la fonction} $g$ \textit{aux bornes de} $D_g$.
+
+\textit{2.a. Calculer} $g'$ \textit{et dresser un tableau de variations de} $g$.
+
+\textit{2.b. Calculer} $g(1)$, \textit{puis déduire le signe de} $g$ \textit{pour tout} $x$ de $D_g$.
+
+\vspace{1mm}
+\textbf{II.} \textit{On considère la fonction :} $\forall x \in ]0,+\infty[$ : $f(x) = 1 - x + \dfrac{\ln x}{x}$
+
+\vspace{1mm}
+
+\textit{1.a. Calcules les limites} $\displaystyle\lim_{x \to 0^+} f(x)$ \textit{et} $\displaystyle\lim_{x \to +\infty} f(x)$.
+
+\textit{1.b. Étudier les branches infinies de la courbe} $(C)$.
+
+\textit{2. Calculer} $f'$, \textit{et dresser un tableau de variations.}
+
+\textit{3. Étudier la concavité de la courbe} $(C)$ \textit{et la droite} $(D) : y = -x + 1$.
+
+\textit{4. Soit} $h$ \textit{la restriction de la fonction} $f$ \textit{sur} $I = [1, +\infty[$
+
+\textit{4.a. Montrer que} $h$ \textit{admet une fonction réciproque} $h^{-1}$ \textit{sur} $J$.
+
+\textit{4.b. Déterminer l'intervalle} $J$ \textit{et dresser un tableau de variations.}
+
+\textit{5. Tracer la courbe} $(C)$ \textit{et} $(C^{-1})$ \textit{dans un repère} $R(O,\vec{i},\vec{j})$.
+
+\vspace{2mm}
+\noindent\colorbox{vert}{\textbf{Exercice 04}} : \textit{On considère la fonction :} $f(x) = \ln(x^2 - 2x)$
+
+\vspace{1mm}
+
+\textit{1.a. Déterminer le domaine de définition} $Df$ \textit{de la fonction} $f$.
+
+\textit{1.b. Calcules les limites de la fonction} $f$ \textit{aux bornes de} $Df$.
+
+\textit{2. Étudier les branches infinies de la courbe} $(C)$.
+
+\textit{3.a. Calculer} $f'$ \textit{et dresser un tableau de variations de} $f$.
+
+\textit{3.b. Déduire le signe de la fonction} $f$ \textit{sur} $Df$.
+
+\textit{4. Calculer} $f''$ \textit{et déduire la concavité de la fonction} $f$.
+
+\textit{5. Tracer la courbe} $(C)$ \textit{dans un repère} $R(O,\vec{i},\vec{j})$.
+
+\end{multicols}
+
+\end{document}
